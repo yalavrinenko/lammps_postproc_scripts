@@ -14,7 +14,13 @@ if len(sys.argv) > 2:
 				if '#' in l:
 					print(l.strip())
 		raw = np.loadtxt(path, comments='#')
-		data = [d for d in raw if d[1] == 1]
+
+		filter_set = set(raw[:, 1])
+		if (len(filter_set) == 2 and filter_set = set([0, 1]))
+			data = [d for d in raw if d[1] == 1]
+		else:
+			data = raw
+			
 		print(len(data))
 
 		data = data[int(len(data) * slice):]
