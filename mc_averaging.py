@@ -13,10 +13,10 @@ if len(sys.argv) > 2:
 			for l in f:
 				if '#' in l:
 					print(l.strip())
-		raw = np.loadtxt(path, comments='#')
+		raw = np.genfromtxt(path, comments='#', invalid_raise=False, skip_header=4)
 
 		filter_set = set(raw[:, 1])
-		if (len(filter_set) == 2 and filter_set = set([0, 1]))
+		if (len(filter_set) == 2 and filter_set == set([0, 1])):
 			data = [d for d in raw if d[1] == 1]
 		else:
 			data = raw
