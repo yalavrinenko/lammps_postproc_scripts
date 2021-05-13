@@ -15,8 +15,8 @@ if len(sys.argv) > 2:
 					print(l.strip())
 		raw = np.genfromtxt(path, comments='#', invalid_raise=False, skip_header=2)
 		
-		filter_set = set(raw[:, 1])
-		if (len(filter_set) == 2 and filter_set == set([0, 1])):
+		filter_set = set(np.round(raw[:, 1], 4))
+		if (len(filter_set) == 2 and filter_set == set([0.0, 1.0])):
 			data = [d for d in raw if d[1] == 1]
 		else:
 			data = raw
